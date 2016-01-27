@@ -3,39 +3,33 @@ using System.Collections;
 
 public class ifStatements : MonoBehaviour
 {
-	float coffeeTemperature = 85.0f;
-	float hotLimitTemperature = 70.0f;
-	float coldLimitTemperature = 40.0f;
-
+	public float porridgeTemperature = 125.0f;
+	public float hotLimitTemperature = 105.0f;
+	public float coldLimitTemperature = 85.0f;
 
 	void Update ()
 	{
-		if(Input.GetKeyDown(KeyCode.Space))
-			TemperatureTest();
+		if (Input.GetKeyDown (KeyCode.Space))
+			TemperatureTest ();
 
-		coffeeTemperature -= Time.deltaTime * 5f;
+		porridgeTemperature -= Time.deltaTime * 5f;
 	}
-
 
 	void TemperatureTest ()
 	{
-		// If the coffee's temperature is greater than the hottest drinking temperature...
-		if(coffeeTemperature > hotLimitTemperature)
+		if (porridgeTemperature > hotLimitTemperature)
 		{
-			// ... do this.
-			print("Coffee is too hot.");
+			print ("Porridge is too hot.");
 		}
-		// If it isn't, but the coffee temperature is less than the coldest drinking temperature...
-		else if(coffeeTemperature < coldLimitTemperature)
+
+		else if(porridgeTemperature < coldLimitTemperature)
 		{
-			// ... do this.
-			print("Coffee is too cold.");
+			print ("Porridge is too cold.");
 		}
-		// If it is neither of those then...
+
 		else
 		{
-			// ... do this.
-			print("Coffee is just right.");
+			print ("Porridge is just right.");
 		}
 	}
 }
